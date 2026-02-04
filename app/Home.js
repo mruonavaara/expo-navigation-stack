@@ -7,10 +7,23 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <Text>Welcome to our App!</Text>
 
-      <Link href={'/Settings?user=User'} asChild>
+      <Link
+        href={{
+          pathname: '/Settings',
+          params: {
+            user: 'User'
+          }
+        }}
+        asChild
+      >
         <Button title='Settings' />
       </Link>
-    </View>
+
+      {/*
+        // Yksinkertainen tekstilinkki, parametri query-parametrina: 
+        <Link href={'/Settings?user=User'}>Settings</Link> 
+      */}
+    </View >
   );
 }
 
